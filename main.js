@@ -31,13 +31,13 @@
     "created": dt.getHours()+':'+dt.getMinutes()
   })
 
-  var btn = document.getElementById('btn')
-  var inp = document.getElementById('inp')
-  var root = document.getElementById('root')
+  // var btn = document.getElementById('btn')
+  // var inp = document.getElementById('inp')
+  // var root = document.getElementById('root')
 
-  btn.addEventListener('click', () => {
+  /*btn.addEventListener('click', () => {
     get(child(dbref, "/Keep/"+octaDt)).then((snapshot) => {
       var data = snapshot.val()
       console.log(data.content)
     })
-  })
+  })*/

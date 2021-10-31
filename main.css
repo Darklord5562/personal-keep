@@ -63,3 +63,55 @@
   height: 50px;
   width: 50px;
 }
+
+#memo{
+  position: absolute;
+  padding: 20px;
+  background: #D8D8D8;
+  border-radius: 10px;
+  width: clamp(300px, 80%, 600px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+textarea,
+input[type="text"]{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  outline: none;
+  margin: 5px 0;
+}
+
+textarea{
+  height: 200px;
+}
+.heading-box>div{
+  display: flex;
+  justify-content: space-between;
+}
+h1{
+  font-size: 20px;
+}
+
+button{
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.primary{
+  background: #0075ff;
+  color: #ffffff;
+}
+
+.blk{
+  width: 100%;
+  margin-top: 10px;
+}
