@@ -1,22 +1,4 @@
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-  import { getDatabase, get, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyATfHbubZF5ljyd4HjursyjdIfIRXDxQnk",
-    authDomain: "personal-keep.firebaseapp.com",
-    databaseURL: "https://personal-keep-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "personal-keep",
-    storageBucket: "personal-keep.appspot.com",
-    messagingSenderId: "650814608036",
-    appId: "1:650814608036:web:ae41a8daeaf2f875f88c31",
-    measurementId: "G-JCZEJYCNKX"
-  };
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-  let dbref = ref(db)
-
-
-
+  // Creating a suitable date format
   let dt = new Date()
   let dd, mm, yyyy
   dd = dt.getUTCDate() < 10 ? '0' + dt.getUTCDate() : dt.getUTCDate()
@@ -24,26 +6,7 @@
   yyyy = dt.getUTCFullYear()
   let octaDt = dd + mm + yyyy
 
-  let jsonData = {
-    "title": "Manoranjan2",
-    "content": "52",
-    "comments": "dev2",
-    "created": dt.getHours() + ':' + dt.getMinutes()
-  }
-
-  set(ref(db, "Keep/" + octaDt), jsonData)
-
-
-
-
-  setCookie(octaDt, JSON.stringify(jsonData), 30)
-  let r = JSON.parse(getCookie(octaDt))
-  console.log(r)
-
-
-
-
-
+  // basic utility settings
   function getCookie(cName) {
     let cookie = [];
     document.cookie.split(';').forEach(function(el) {
@@ -53,11 +16,6 @@
     return cookie[cName];
   }
 
-
-
-
-
-
   function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -66,8 +24,26 @@
   }
 
 
+  // js settings for app
+  var modal = document.getElementById('memo')
+  var overlay = document.getElementById('overlay')
+  var fab = document.getElementById('fab');
+  var closeModal = document.getElementById('close-modal')
 
 
-  get(child(dbref, "/Keep/" + octaDt)).then((snapshot) => {
-    var data = snapshot.val()
+
+  fab.addEventListener('click', function() {
+    modal.style.transform = 'translate(-50%, -50%) scale(1)'
+    overlay.classList.toggle('overlay')
+    document.body.classList.toggle('no-scri')
+  })
+  overlay.addEventListener('click', function() {
+    modal.style.transform = 'translate(-50%, -50%) scale(0)'
+    overlay.classList.toggle('overlay')
+    document.body.classList.toggle('no-scroll')
+  })
+closeModal.addEventListener('click', function() {
+    modal.style.transform = 'translate(-50%, -50%) scale(0)'
+    overlay.classList.toggle('overlay')
+    document.body.classList.toggle('no-scroll')
   })
