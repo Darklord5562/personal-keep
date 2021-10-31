@@ -67,7 +67,7 @@
 }
 
 #memo{
-  position: absolute;
+  position: fixed;
   padding: 20px;
   background: #D8D8D8;
   border-radius: 10px;
@@ -97,7 +97,9 @@ input[type="text"]{
   outline: none;
   margin: 5px 0;
 }
-
+/* body{
+  overflow: hidden;
+} */
 .no-scroll{
   overflow: hidden;
 }

@@ -35,15 +35,15 @@
   fab.addEventListener('click', function() {
     modal.style.transform = 'translate(-50%, -50%) scale(1)'
     overlay.classList.toggle('overlay')
-    document.body.classList.toggle('no-scri')
+    document.body.classList.add('no-scroll')
   })
   overlay.addEventListener('click', function() {
     modal.style.transform = 'translate(-50%, -50%) scale(0)'
     overlay.classList.toggle('overlay')
-    document.body.classList.toggle('no-scroll')
+    document.body.classList.remove('no-scroll')
   })
 closeModal.addEventListener('click', function() {
     modal.style.transform = 'translate(-50%, -50%) scale(0)'
     overlay.classList.toggle('overlay')
-    document.body.classList.toggle('no-scroll')
+    document.body.classList.remove('no-scroll')
   })
