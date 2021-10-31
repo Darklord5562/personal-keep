@@ -47,3 +47,14 @@
   border: 1px solid #C2C2C2;
   margin-bottom: 10px;
 }
+#fab{
+  background: #1CA2FF;
+  position: fixed;
+  border-radius: 50%;
+  bottom: 20px;
+  right: 20px;
+  display: grid;
+  place-items: center;
+  height: 50px;
+  width: 50px;
+}
