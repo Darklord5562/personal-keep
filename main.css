@@ -18,23 +18,24 @@
   padding: 0 20px 0 15px;
   display: flex;
   justify-content: space-between;
+  color: #ffffff;
   align-items: center;
   box-shadow: 2px 2px 4px #ccc;
   position: fixed;
   width: 100%;
-  background: #F6F6F6;
+  background: #363C47;
   border-bottom: 1px solid #ccc;
   top: 0;
 }
 
 .view-box {
-  padding: 20px;
+  padding: 15px;
   margin-top: 50px;
   min-height: 100vh;
 }
 
 .logo {
-  height: 40px;
+  height: 35px;
 }
 
 .cards {
