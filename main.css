@@ -1,3 +1,8 @@
+@font-face{
+  font-family: "Product Sans";
+  src: url("Ps.ttf");
+}
+
 * {
   font-family: 'Product Sans', sans-serif;
   font-size: 14px;
