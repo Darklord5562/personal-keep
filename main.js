@@ -1,13 +1,6 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
   import { getDatabase, get, ref, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
   import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js';
-
-
-
-
-
-
-
   const firebaseConfig = {
     apiKey: "AIzaSyATfHbubZF5ljyd4HjursyjdIfIRXDxQnk",
     authDomain: "personal-keep.firebaseapp.com",
@@ -19,29 +12,32 @@
     measurementId: "G-JCZEJYCNKX"
   };
 
-  // Initialize Firebase
+  var dt = new Date()
+  var dd,mm,yyyy
+  dd = dt.getUTCDate()<10 ? '0'+dt.getUTCDate():dt.getUTCDate()
+  mm = dt.getUTCMonth()<10 ? '0'+dt.getUTCMonth():dt.getUTCMonth()
+  yyyy = dt.getUTCFullYear()
+  var octaDt = 'keep'+dd+mm+yyyy
+  
+
   const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
   let dbref = ref(db)
-  var i = '20::20'
-  /*set(ref(db, "Keep/"+i), {
-    "name": "Manoranjan2",
-    "class" : "52",
-    "hobby" : "dev2",
-    "age" : "192"
+  var i = '6'
+  set(ref(db, "Keep/" + octaDt), {
+    "title": "Manoranjan2",
+    "content": "52",
+    "comments": "dev2",
+    "created": dt.getHours()+':'+dt.getMinutes()
   })
-  */
+
   var btn = document.getElementById('btn')
   var inp = document.getElementById('inp')
   var root = document.getElementById('root')
 
   btn.addEventListener('click', () => {
-    var x = inp.value
-    get(child(dbref, "/" + x)).then((snapshot) => {
+    get(child(dbref, "/Keep/"+octaDt)).then((snapshot) => {
       var data = snapshot.val()
-      var view = `Id: ${data.id}
-Name: ${data.name}
-Age: ${data.age}`
-      root.innerText = view
+      console.log(data.content)
     })
   })
