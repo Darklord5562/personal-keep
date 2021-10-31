@@ -13,6 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 .topbar {
   height: 50px;
   padding: 0 20px 0 15px;
@@ -73,6 +75,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 110;
+  
 }
 
 textarea,
@@ -85,8 +89,9 @@ input[type="text"]{
   margin: 5px 0;
 }
 
-textarea{
+#inp{
   height: 200px;
+  
 }
 .heading-box>div{
   display: flex;
@@ -114,4 +119,16 @@ button{
 .blk{
   width: 100%;
   margin-top: 10px;
+}
+
+
+.overlay{
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  background: #808080;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
