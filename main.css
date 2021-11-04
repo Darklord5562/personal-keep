@@ -97,9 +97,6 @@ input[type="text"]{
   outline: none;
   margin: 5px 0;
 }
-/* body{
-  overflow: hidden;
-} */
 .no-scroll{
   overflow: hidden;
 }
